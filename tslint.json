@@ -1,0 +1,60 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-react"
+  ],
+  "rules": {
+    "jsx-wrap-multiline": false,
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ],
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "no-empty-interface": false,
+    "member-access": false,
+    "jsx-boolean-value": [
+      true,
+      "never"
+    ],
+    "trailing-comma": false,
+    "no-trailing-whitespace": false,
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "no-object-literal-type-assertion": false,
+    "max-classes-per-file": [
+      false
+    ],
+    "max-line-length": [
+      false
+    ],
+    "variable-name": [
+      true,
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ]
+  }
+}
