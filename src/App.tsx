@@ -1,14 +1,21 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
+
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+
+import AppWithNavigationState from './navigators/MainStackNavigator';
+import AppReducer from './reducers';
 
 export default class App extends React.Component {
+
+  store = createStore(AppReducer);
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Hi from typescript!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Provider store={this.store}>
+        <AppWithNavigationState/>
+      </Provider>
     );
   }
 }
