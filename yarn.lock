@@ -541,6 +541,10 @@
   version "9.6.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.5.tgz#ee700810fdf49ac1c399fc5980b7559b3e5a381d"
 
+"@types/promise.prototype.finally@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/promise.prototype.finally/-/promise.prototype.finally-2.0.2.tgz#68fefb8f0e23f21893a33740c931c79f44be3499"
+
 "@types/react-native@*", "@types/react-native@^0.55.2":
   version "0.55.2"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.55.2.tgz#78e7e963eb1172eb715507e733b99821e4ce9072"

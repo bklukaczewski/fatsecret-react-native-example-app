@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "@types/promise.prototype.finally": "^2.0.2",
     "@types/react": "^16.3.10",
     "@types/react-native": "^0.55.2",
     "babel-preset-react-native": "^4.0.0",
@@ -26,6 +27,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
     "@types/react-navigation": "^1.5.5",
     "@types/react-redux": "^5.0.16",
     "expo": "^26.0.0",

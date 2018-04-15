@@ -1,17 +1,43 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
 
+import * as Expo from 'expo';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 
 import AppWithNavigationState from './navigators/MainStackNavigator';
 import AppReducer from './reducers';
 
-export default class App extends React.Component {
+interface Props { }
+interface State {
+  isReady: boolean;
+}
+
+export default class App extends React.Component<Props, State> {
 
   store = createStore(AppReducer);
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      isReady: false
+    };
+  }
+
+  componentWillMount() {
+    this.loadFonts();
+  }
+
+  async loadFonts() {
+    // noinspection TsLint: Need to require specific file from submodule
+    await Expo.Font.loadAsync({
+      MaterialIcons: require('@expo/vector-icons/fonts/MaterialIcons.ttf')
+    });
+    this.setState({ isReady: true });
+  }
 
   render() {
+    if (!this.state.isReady) {
+      return <Expo.AppLoading />;
+    }
     return (
       <Provider store={this.store}>
         <AppWithNavigationState/>
@@ -19,12 +45,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
