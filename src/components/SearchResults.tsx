@@ -31,14 +31,14 @@ class SearchResults extends React.Component<Props> {
     }
     return (
       <ScrollView>
-        <List>
+        {results.length && <List>
           {results.map((result, index) => <ListItem
             key={index}
             title={result.food_name}
             subtitle={result.food_description}
             onPress={() => this.onFoodPress(result)}
           />)}
-        </List>
+        </List>}
       </ScrollView>
     );
   }

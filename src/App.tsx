@@ -27,7 +27,6 @@ export default class App extends React.Component<Props, State> {
   }
 
   async loadFonts() {
-    // noinspection TsLint: Need to require specific file from submodule
     await Expo.Font.loadAsync({
       MaterialIcons: require('@expo/vector-icons/fonts/MaterialIcons.ttf')
     });

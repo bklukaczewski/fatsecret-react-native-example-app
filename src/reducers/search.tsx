@@ -19,10 +19,10 @@ export function search(state = initialState, action): SearchState {
       return {...state, query: action.payload};
     case SearchActions.SetSearchResults:
       if (!action.payload) {
-        return {...state, results: null};
+        return {...state, isLoading: false, results: []};
       }
       const results = Array.isArray(action.payload) ? action.payload : [action.payload];
-      return {...state, results};
+      return {...state, isLoading: false, results};
     case SearchActions.StartLoading:
       return {...state, isLoading: true};
     case SearchActions.FinishLoading:
