@@ -31,7 +31,7 @@ class SearchResults extends React.Component<Props> {
     }
     return (
       <ScrollView>
-        {results.length && <List>
+        {!!results.length && <List>
           {results.map((result, index) => <ListItem
             key={index}
             title={result.food_name}

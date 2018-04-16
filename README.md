@@ -1,3 +1,34 @@
+# Summary
+
+React Native Fatsecret API Example
+
+## Goal
+
+Most of Fatsecret specific logic is in `src/fatsecret.tsx` file. OAuth parameters handling, request signing is already there in
+addition to `foods.search` and `food.get` REST API methods.
+
+This project also shows how easily make React Native work nicely with Typescipt and RxJs (Observables, Subjects etc).
+
+React Navigation, redux and Fetch API is also used here.
+
+## Requirements
+
+Before `yarn` and `yarn start` make sure you have your Fatsecret API keys in `src/fatsecret.tsx`
+
+```
+const ACCESS_KEY = '';
+const APP_SECRET = '';
+```
+
+This project has been tested with Android only.
+
+## Test on your device
+
+[Expo](https://expo.io/@bklukaczewski/fatsecretreactnativeexampleapp)
+
+
+# Auto generated documentation
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
