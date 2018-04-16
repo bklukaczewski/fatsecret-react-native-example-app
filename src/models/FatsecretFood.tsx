@@ -9,7 +9,10 @@ export enum FatsecretServingUnit {
   Ounces = 'oz',
 }
 
-/* It would be recommended to convert Fatsecret response types to our own (with camelCase property names). */
+/*
+  It would be recommended to convert Fatsecret response types to our own (with camelCase property names and
+  more predictable properties).
+*/
 export interface FatsecretFood {
   food_id: string;
   food_name: string;
@@ -18,7 +21,8 @@ export interface FatsecretFood {
   brand_name?: string;
   food_description?: string;
   servings?: {
-    serving: FatsecretServing[];
+    /* Serving from API can be either a list or plain object. */
+    serving: FatsecretServing[] | FatsecretServing;
   };
 }
 

@@ -2,10 +2,13 @@ import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
 
 import {List, ListItem} from 'react-native-elements';
+import {NavigationActions} from 'react-navigation';
+import {connect} from 'react-redux';
 
 import {FatsecretFood} from '../models';
 
 interface Props {
+  dispatch: (action) => object;
   results: FatsecretFood[];
   isLoading: boolean;
 }
@@ -13,7 +16,9 @@ interface Props {
 class SearchResults extends React.Component<Props> {
 
   onFoodPress(food: FatsecretFood) {
-    requestAnimationFrame(() => {});
+    requestAnimationFrame(() => {
+      this.props.dispatch(NavigationActions.navigate({routeName: 'FoodDetails', params: {food}}));
+    });
   }
 
   render() {
@@ -39,4 +44,10 @@ class SearchResults extends React.Component<Props> {
   }
 }
 
-export default SearchResults;
+const mapStateToProps = (state) => ({
+  dispatch: state.dispatch,
+  results: state.search.results,
+  isLoading: state.search.isLoading,
+});
+
+export default connect(mapStateToProps)(SearchResults);

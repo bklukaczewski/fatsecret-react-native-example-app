@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import {searchActions} from '../actions';
 import {LoadingIndicator, SearchResults} from '../components';
 import {searchFood} from '../fatsecret';
-import {FatsecretFood, FatsecretResponse} from '../models';
+import {FatsecretResponse} from '../models';
 import styles from '../styles';
 
 const SEARCH_INTERVAL = 800;
@@ -15,7 +15,6 @@ const SEARCH_INTERVAL = 800;
 interface Props {
   dispatch: (action) => object;
   isLoading: boolean;
-  results: FatsecretFood[];
 }
 
 class FoodSearchScreen extends React.Component<Props> {
@@ -51,7 +50,7 @@ class FoodSearchScreen extends React.Component<Props> {
   }
 
   render() {
-    const {isLoading, results} = this.props;
+    const {isLoading} = this.props;
     return (
       <View style={styles.common.view}>
         <SearchBar
@@ -61,10 +60,7 @@ class FoodSearchScreen extends React.Component<Props> {
           lightTheme
         />
         <LoadingIndicator isLoading={isLoading}/>
-        <SearchResults
-          results={results}
-          isLoading={isLoading}
-        />
+        <SearchResults/>
       </View>
     );
   }
@@ -73,7 +69,6 @@ class FoodSearchScreen extends React.Component<Props> {
 const mapStateToProps = (state) => ({
   dispatch: state.dispatch,
   isLoading: state.search.isLoading,
-  results: state.search.results,
 });
 
 export default connect(mapStateToProps)(FoodSearchScreen);
